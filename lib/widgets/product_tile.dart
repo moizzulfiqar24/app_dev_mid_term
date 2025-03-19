@@ -23,7 +23,7 @@ class ProductTile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   child: CachedNetworkImage(
                     imageUrl: product.image,
-                    height: 140, 
+                    height: 140,
                     width: double.infinity,
                     fit: BoxFit.cover,
                     placeholder: (context, url) => Container(
@@ -34,13 +34,13 @@ class ProductTile extends StatelessWidget {
                 ),
                 Positioned(
                   top: 8,
-                  right: 8, 
+                  right: 8,
                   child: GestureDetector(
                     onTap: () {},
                     child: Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.deepPurple, 
+                        color: Colors.deepPurple,
                         boxShadow: [
                           BoxShadow(color: Colors.black26, blurRadius: 2)
                         ],
@@ -59,14 +59,14 @@ class ProductTile extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Colors.purple,
-                    borderRadius: BorderRadius.circular(12),
+                    color: const Color.fromARGB(255, 217, 198, 220),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
                     product.category.toUpperCase(),
                     style: TextStyle(
                         fontSize: 10,
-                        color: Colors.white,
+                        color: Colors.deepPurple[900],
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -81,8 +81,9 @@ class ProductTile extends StatelessWidget {
                         Text(
                           product.rating.rate.toString(),
                           style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w500),
-                          overflow: TextOverflow.ellipsis,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ],
                     ),
@@ -103,21 +104,11 @@ class ProductTile extends StatelessWidget {
                 Text(
                   "\$${product.price}",
                   style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.purple),
-                ),
-                if (product.price < 20) 
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Text(
-                      "\$${(product.price * 1.2).toStringAsFixed(2)}",
-                      style: TextStyle(
-                          fontSize: 14,
-                          decoration: TextDecoration.lineThrough,
-                          color: Colors.grey),
-                    ),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.deepPurple[600],
                   ),
+                ),
               ],
             ),
             const SizedBox(height: 4),
@@ -128,22 +119,24 @@ class ProductTile extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton.icon(
                     onPressed: () {},
-                    icon: Icon(Icons.shopping_cart,
-                        size: 16, color: Colors.purple),
+                    icon: Icon(
+                      Icons.shopping_cart,
+                      size: 16,
+                      color: Colors.deepPurple[600],
+                    ),
                     label: Text(
                       "Add to Cart",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.purple),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.deepPurple[600],
+                      ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.purple
-                          .withOpacity(0.1), 
+                      backgroundColor: Colors.deepPurple[100],
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            12), 
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      padding: EdgeInsets.symmetric(
-                          vertical: 12), 
+                      padding: EdgeInsets.symmetric(vertical: 12),
                     ),
                   ),
                 ),
